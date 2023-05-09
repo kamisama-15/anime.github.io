@@ -1,0 +1,433 @@
+*{
+    padding: 0;
+    
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+#nav-bar{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191922;
+    box-shadow: 0px 0px 5px 5px rgba(9, 0, 0, 0.7);
+    z-index: 99;
+}
+#nav-bar span{
+    margin-left: 100px;
+    display: block;
+}
+#nav-bar span a{
+    font-size: 40px;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    font-weight:600;   
+    color: #fff;
+    letter-spacing: 5px;
+}
+#nav-bar ul{
+    width:40%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#nav-bar ul li{
+    list-style: none;
+    display: block;
+    padding: 0px 20px;
+}
+#nav-bar ul li a{
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    font-size:15px;
+    color: #fff;
+}
+#nav-bar ul li a i{
+    padding: 5px;
+}
+#nav-bar ul li a::after{
+    content: "  ";
+    height: 3px;
+    width: 0%;
+    background-color: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+#nav-bar ul li a:hover::after{
+    width: 100%;
+    cursor: pointer;
+}
+#body{
+    width: 100%;
+    height:90vh;
+    display: block;
+
+}
+#body .swiper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#body .swiper h1{
+    position: absolute;
+    z-index: 10;
+    font-family: 'Kanit', sans-serif;
+    font-size: 60px;
+    letter-spacing: 10px;
+    color: #191922;
+    -webkit-text-stroke: 2px #fff;
+}
+#body .swiper img{
+    height: fit-content;
+    width: 100%;
+}
+#body .swiper .swiper-button-next, .swiper .swiper-button-prev{
+    color: white;
+    font-weight: 700;
+ }
+ #body .swiper .swiper-pagination-bullet-active{
+     background:white;
+ }
+#animelist{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#animelist .animelist-header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+#animelist .animelist-header h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+}
+
+#animelist .animelist-body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#animelist .animelist-body .anime-container{
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: first baseline;
+}
+#animelist .animelist-body .anime-container .anime{
+    position: relative;
+    transition: 0.5s;
+    background-color: #191922;
+    border: 2px solid gray;
+    flex-basis: 15%;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1;
+    min-width:80px;
+}
+#animelist .animelist-body .anime-container .anime a:hover{
+    background-color: white;
+    color: #191922;
+}
+
+#animelist .animelist-body .anime-container .anime a{
+    text-decoration: none;
+    font-size: 10px;
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#animelist .animelist-body .anime .details{  
+    position: absolute;
+    left: 50%;
+    top: -250%;
+    width: 25em;
+    height: 20vh;
+    z-index: 78;
+    padding: 20px;
+    background-color: #191922;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    visibility: hidden;
+    border: 2px solid #fff;
+}
+#animelist .animelist-body .anime .last{  
+    position: absolute;
+    left: -200%;
+    top: -300%;
+    width: 30em;
+    height: 20vh;
+    z-index: 99;
+    padding: 20px;
+    background-color: #191922;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    visibility: hidden;
+    border: 2px solid;
+    border: 2px solid #fff;
+
+}
+#animelist .animelist-body .anime:hover div{
+   visibility: visible;
+}
+#animelist .animelist-body .anime:hover div img{
+    height: 100%;
+    width: 50%;
+    flex: 0.5;
+}
+#animelist .animelist-body .anime .details .text{
+    flex: 1;
+    text-align: left;
+    padding: 0px 10px;
+}
+#animelist .animelist-body .anime .details .text p{
+    font-family:'Kanit', sans-serif ;
+}
+#animelist .animelist-body .anime .details .text p:nth-child(2){
+    color: #fff;
+    font-size: 10px;
+}
+#animelist .animelist-body .anime .details .text p span{
+    color: yellow;
+    font-size: 15px;
+}
+#animelist .animelist-body .anime .details .text p:nth-child(1){
+    color: yellow;
+}
+#animelist .animelist-body .anime .details .text p:nth-child(3){
+    color: #fff;
+    font-style: italic;
+    font-size: 10px;
+}
+#popular{
+    width: 100%;
+    height: auto;
+    display: block;
+    padding-top: 20px;
+    margin: auto;
+}
+#popular .popular-header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+#popular .popular-header h1{
+    font-family: 'Kanit', sans-serif;
+    font-size: 40px;
+}
+#popular .popular-body{
+    display: flex;
+    justify-content: space-around;
+    align-content: first baseline;
+    row-gap: 2em;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+#popular .popular-body a{
+    text-decoration: none;
+    flex-basis: 15%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content:first baseline;
+    flex-direction: column;
+    background-color: #191922;
+    text-align: center;
+    transition: 0.5s;
+    position: relative;
+    min-width: 150px;
+}
+
+#popular .popular-body a i{
+    color:yellow;
+    font-size: 50px;
+    position: absolute;
+    top: 40%;
+    visibility: hidden;
+}
+#popular .popular-body a:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 2px rgba(9, 0, 0, 0.7);
+}
+#popular .popular-body a:hover i{
+    visibility: visible;
+}
+
+#popular .popular-body a img{
+    width: 100%;
+    height: 80%;
+}
+#popular .popular-body a p{
+    margin-top: 15px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    text-align: top ;
+
+}
+#contact{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+#contact .contact-header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact .contact-header h1{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: 35px;  
+    color: #36454F;
+}
+#contact .contact-email{
+    width: 100%;
+    height: 20vh;
+    padding: 20px 0px;
+    background-color: #191922;
+    position: relative;
+    display: flex;
+}
+#contact .contact-email form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+#contact .contact-email form input[type=text]{
+    width: 410px;
+    height: 30px;
+    display: block;
+    padding: 10px;
+    border:none;
+    border-right: 1px solid;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    margin-left: 50px;
+}
+#contact .contact-email form input[type=submit]{
+    width: 60px;
+    height: 53px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+    transition: 0.5s;
+    border-left: none;
+}
+#contact .contact-email input[type=submit]:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+#contact .contact-email span{
+    position: absolute;
+    top: 38%;
+    right:100px ;
+    font-family: 'Kanit', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+}
+#contact .contact-details{
+    display: flex;
+    width: 100%;
+    height: 40vh;
+}
+#contact .contact-details .details{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height:40vh;
+    flex-direction: column;
+    
+}
+#contact .contact-details .details span{
+    padding-top: 8px;
+    padding-left: 100px;
+    font-family: 'Kanit', sans-serif;
+    color: #191922;
+}
+#contact .contact-details .details span:nth-child(1){
+    font-size: 25px;
+    color: #36454F;
+    font-family: 'Kanit', sans-serif;   
+}
+#contact .contact-details .social-media{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height:40vh;
+    flex-direction: column;
+    color: #36454F;
+}
+#contact .contact-details .social-media span{
+    padding-top: 8px;
+    text-align: left;
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    color: #191922;
+}
+#contact .contact-details .social-media a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    padding-top: 3px;
+    font-family: 'Kanit', sans-serif;
+}
+#contact .contact-details .social-media a i{
+    padding: 0px 5px;
+    display: inline-block;
+    width: 20px;
+    padding-top: 3px;
+    font-size: 20px;
+}
+footer{
+    width: 100%;
+    height: 25px;
+    background-color: FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0 ;
+}
+footer span{
+    font-family: 'Kanit', sans-serif;
+    font-size: small;
+    color: #36454F;
+}

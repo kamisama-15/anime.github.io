@@ -1,0 +1,36 @@
+@media(max-width:700){
+    #nav-bar span a{
+        font-size: 25px;
+        }
+        #nav-bar span{
+            margin-left: 40px;
+        }
+        #nav-bar ul{
+            position: absolute;
+            background-color: black;
+            height: 100vh;
+            width:200px;
+            text-align: left;
+            top:0;
+            right:0px;
+            display: block;
+            transition: 0.5s;
+            z-index: 97;
+        }
+        #nav-bar ul li{
+            display: block;
+            padding: 15px;
+        }
+        #nav-bar ul li a{
+            color: #ffa31a;
+            font-size: 20px;     
+        }
+        #nav-bar .fa-solid{
+            display: block;
+            color:#fff;
+            margin: 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+}

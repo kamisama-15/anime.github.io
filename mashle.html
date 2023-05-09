@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime</title>
+    <link rel="shortcut icon" href="/AP.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <section id="nav-bar">
+        <span><a href="#">AnimePLus</a></span>
+        <ul>
+            <li> 
+                <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+            </li>
+            <li> 
+                <a href="index.html"><i class="fa fa-list" aria-hidden="true"></i>Anime List</a>
+            </li>
+            <li> 
+                <a href="index.html"><i class="fa fa-fire" aria-hidden="true"></i>Popular</a>
+            </li>
+            <li> 
+                <a href="#index.html"><i class="fa fa-newspaper" aria-hidden="true"></i>Latest</a>
+            </li>
+        </ul>
+    </section>
+    <section id="video-container">
+        <div class="main-video">
+            <video src="/mashle/EP.3.v0.1682097324.720p.mp4" id="video"autoPlay preload="auto" controls poster="AP.png"></video>
+            <h2>Mashle Episode 1</h2>
+        </div>
+        <div class="video-episodes">
+            <a href="#" class="vid active">
+                <video src="/mashle/EP.3.v0.1682097324.720p.mp4" muted poster="/anime pics/mashle.png"></video>
+                <h2>Mashle Episode 1</h2>
+            </a>
+                
+            <a href="#" class="vid active">
+                <video src="/mashle/EP.3.v0.1682097324.720p.mp4" muted poster="/anime pics/mashle.png"></video>
+                <h2>Mashle Episode 2</h2>
+            </a>
+            <a href="#" class="vid active">
+                <video src="/mashle/EP.3.v0.1682097324.720p.mp4" muted poster="/anime pics/mashle.png"></video>
+                <h2>Mashle Episode 3</h2>
+            </a>
+        </div>
+    </section>
+    
+
+
+    <script>
+        let playList = document.querySelectorAll('#video-container .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('#video-container h2');
+  
+        playList.forEach(video =>{
+           video.onclick = () =>{
+              playList.forEach(vid => vid.classList.remove('active') );
+              video.classList.add('active');
+              if(video.classList.contains('active')){
+                 let src = video.children[0].getAttribute('src');
+                 mainVideo.src = src;
+                 let text = video.children[1].innerHTML;
+                 title.innerHTML = text;
+              }
+           };
+        });
+      </script>
+      <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+      <script>
+        var myFP = fluidPlayer(
+        'video',	{
+	"layoutControls": {
+		"controlBar": {
+			"autoHideTimeout": 3,
+			"animated": true,
+			"autoHide": true,
+			"playbackRates": [
+				"x2",
+				"x1.5",
+				"x1",
+				"x0.5"
+			]
+		},
+		"htmlOnPauseBlock": {
+			"html": null,
+			"height": null,
+			"width": null
+		},
+		"autoPlay": true,
+		"mute": false,
+		"allowTheatre": true,
+		"playPauseAnimation": true,
+		"playbackRateEnabled": true,
+		"allowDownload": true,
+		"playButtonShowing": true,
+		"fillToContainer": true,
+		"posterImage": "AP.png"
+	},
+	"vastOptions": {
+		"adList": [],
+		"adCTAText": false,
+		"adCTATextPosition": ""
+	}
+});
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+      <script>
+         const options = {
+            bottom: '64px', // default: '32px'
+            right: 'unset', // default: '32px'
+            right: '32px', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: false, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+          }
+          
+          const darkmode = new Darkmode(options);
+          darkmode.showWidget();
+      </script>
+</body>
+</html>
